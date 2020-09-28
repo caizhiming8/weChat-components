@@ -1,0 +1,86 @@
+/**index.wxss**/
+page {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.container>.cont-view {
+  flex: 1;
+  overflow: hidden;
+}
+.container>.operate-view {
+  display: flex;
+  border-top:2rpx solid #f2f2f2;
+  padding: 20rpx 20rpx 60rpx;
+}
+.container>.operate-view.operate-view-x {
+  padding: 20rpx 20rpx 80rpx;
+}
+.container>.operate-view>.left,
+.container>.operate-view>.right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.container>.operate-view>.left>.btn.last-btn,
+.container>.operate-view>.right>.btn.last-btn {
+  margin-top: 10rpx;
+}
+.container>.operate-view>.cont {
+  flex: 1;
+  display: flex;
+  margin: 0 10rpx;
+  flex-direction: column;
+  justify-content: center;
+}
+.container>.operate-view>.cont>.item {
+  display: flex;
+  align-items: center;
+}
+.container>.operate-view>.cont>.item:last-child {
+  margin-top: 40rpx;
+}
+.container>.operate-view>.cont>.item>.line {
+  flex: 1;
+  position: relative;
+  height: 20rpx;
+  width: 100%;
+  border-radius: 20rpx;
+  background: linear-gradient(right,red,blue,red);
+  background: -webkit-linear-gradient(right,red,blue,red);
+}
+.container>.operate-view>.cont>.item>.line>.slide-block {
+  height: 40rpx;
+  top: -10rpx;
+  width: 6px;
+  position: absolute;
+  background-color: #ccc;
+  border-radius: 3px;
+}
+.container>.operate-view>.cont>.item>.info {
+  width: 80rpx;
+  color: #ccc;
+  font-size: 22rpx;
+  text-align: center;
+}
+.container>.operate-view>.left>.btn,
+.container>.operate-view>.right>.btn  {
+  width: 150rpx;
+  color: #fff;
+  height: 60rpx;
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  border-radius: 30rpx;
+  justify-content: center;
+  background-color: rgb(109, 224, 33);
+  margin: auto;
+}
+.cut-canvas {
+  top: -200000px;
+  position: absolute;
+}

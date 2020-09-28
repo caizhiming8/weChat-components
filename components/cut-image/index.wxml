@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="g-cont">
+  <view class="cont-view"
+   id="contView"
+   bindtouchmove="_jkCutViewMove" bindtouchstart="_jkCutViewStart">
+    <image
+     id="cutImg"
+     src="{{cutImgInfo.src}}"
+     style="width: {{cutImgInfo.picWidth}}px;height: {{cutImgInfo.picHeight}}px;transform:rotate({{rotateImgandCanvas}}deg) scale({{scaleImgandCanvas}});" alt=""></image>
+  </view>
+</view>
+<view 
+ class="cut_view" 
+ style="top: {{cut_viewTop}}px;left: {{cut_viewLeft}}px;width: {{cut_viewWidth}}px;height: {{cut_viewHeight}}px"
+ >
+  <view class="cut_view_cont"
+   bindtouchmove="_jkCut_ViewMove" bindtouchstart="_jkCut_ViewStart"
+  >
+    <view class="btn left-top"
+     wx:if="{{cut_viewWidth>0}}"
+     catchtouchmove="_jkCut_ViewMove_angle" 
+     data-info="left_top"></view>
+    <view class="btn right-bot"
+     wx:if="{{cut_viewWidth>0}}"
+     catchtouchmove="_jkCut_ViewMove_angle" 
+     data-info="right_bot"></view>
+  </view>
+</view>
+<canvas class="cut-canvas" canvas-id="cutCanvas"
+ width="{{cutCanvasInfo.Width}}"
+ height="{{cutCanvasInfo.Height}}"
+ style="width: {{cutCanvasInfo.Width}}px;height: {{cutCanvasInfo.Height}}px;" alt=""></canvas>

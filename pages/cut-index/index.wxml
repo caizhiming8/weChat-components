@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="cont-view">
+    <jk-cut-image
+     imgSrc="{{imgSrc}}"
+     pcutImgInfo="{{pcutImgInfo}}"
+     scaleImgandCanvas="{{scaleImgandCanvas}}"
+     rotateImgandCanvas="{{rotateImgandCanvas}}"
+     pcutCanvasInfo="{{cutCanvasInfo}}"
+     bind:jkGetnoreadcount="jkGetNoreadNotify"
+     id="component_cut"
+     ></jk-cut-image>
+  </view>
+  <!-- 操作台 -->
+  <view class="operate-view {{isIpx?'operate-view-x':''}}">
+    <view class="left">
+      <view class="btn" bindtap="jkChooseImg">选择</view>
+      <view class="btn last-btn" bindtap="jkResetCutImg">重做</view>
+    </view>
+    <view class="cont">
+      <view class="item">
+        <view class="line line-scale" id="lineSlide">
+          <view class="slide-block"
+           style="left: {{slideLeft_scale}}px;width: {{slideWidth}}px" 
+           bindtouchmove="jkSlideViewMove" 
+           bindtouchend="jkSlideViewEnd"
+           data-info="scale"></view>
+        </view>
+        <view class="info">{{ jkDandB.scale }} 倍</view>
+      </view>
+      <view class="item">
+        <view class="line line-rotate">
+          <view class="slide-block"
+           style="left: {{slideLeft_rotate}}px;width: {{slideWidth}}px"
+           bindtouchmove="jkSlideViewMove"
+           bindtouchend="jkSlideViewEnd"
+           data-info="rotate"></view>
+        </view>
+        <view class="info">{{ jkDandB.rotate }} 度</view>
+      </view>
+    </view>
+    <view class="right">
+      <view class="btn" bindtap="jkCutImg">确定</view>
+    </view>
+  </view>
+</view>
